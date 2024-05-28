@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .calculator {
+        width: 300px;
+        margin: 0 auto;
+        border-radius: 10px;
+        background-color: #0c0d0f;
+        color: #f3eded;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .calculator input {
+        font-size: 25px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .calculator button {
+        font-size: 25px;
+        margin-top: 10px;
+        padding: 8px;
+        box-shadow: 0 4px 8px rgba(20, 20, 20, 0.2);
+      }
+      .color {
+        color: rgb(112, 95, 187);
+      }
+      .rounded-pill {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="text-center mb-4 color">Calculator</h2>
+      <div class="calculator shadow p-4">
+        <input
+          type="text"
+          id="screen"
+          class="form-control mb-3 text-right"
+          readonly
+          placeholder="0"
+        />
+        <div class="row">
+          <div class="col">
+            <button
+              class="btn btn-light btn-block rounded-pill"
+              onclick="appendToScreen('%')"
+            >
+              %
+            </button>
+          </div>
+
+          <div class="col">
+            <button
+              class="btn btn-light btn-block rounded-pill"
+              onclick="toggleSign()"
+            >
+              ±
+            </button>
+          </div>
+          <div class="col">
+            <button
+              class="btn btn-light btn-block rounded-pill"
+              onclick="appendToScreen('/')"
+            >
+              /
+            </button>
+          </div>
+          <div class="col">
+            <button
+              class="btn btn-warning btn-block rounded-pill"
+              onclick="cancelOne()"
+            >
+              &larr;
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button
+              class="btn btn-dark btn-block rounded-pill"
+              onclick="appendToScreen('7')"
+            >
+              7
+            </button>
+          </div>
+          <div class="col">
+            <button
+              class="btn btn-dark btn-block rounded-pill"
+              onclick="appendToScreen('8')"
+            >
+              8
+            </button>
+          </div>
+          <div class="col">
+            <button
+              class="btn btn-dark btn-block rounded-pill"
+              onclick="appendToScreen('9')"
+            >
+              9
+            </button>
+          </div>
+          <div class="col">
+            <button
+              class="btn btn-warning btn-block rounded-pill"
+              onclick="appendToScreen('*')"
+            >
+              x
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button
+              class="btn btn-dark btn-block rounded-pill"
+              onclick="appendToScreen('4')"
+            >
+              4
+            </button>
+          </div>
+          <div class="col">
+            <button
+              class="btn btn-dark btn-block rounded-pill"
+              onclick="appendToScreen('5')"
+            >
+              5
+            </button>
+          </div>
+          <div class="col">
+            <button
+              class="btn btn-dark btn-block rounded-pill"
+              onclick="appendToScreen('6')"
+            >
+              6
+            </button>
+          </div>
+          <div class="col">
+            <button
+              class="btn btn-warning btn-block rounded-pill"
+              onclick="appendToScreen('+')"
+            >
+              +
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button
+              class="btn btn-dark btn-block rounded-pill"
+              onclick="appendToScreen('1')"
+            >
+              1
+            </button>
+          </div>
+          <div class="col">
+            <button
+              class="btn btn-dark btn-block rounded-pill"
+              onclick="appendToScreen('2')"
+            >
+              2
+            </button>
+          </div>
+          <div class="col">
+            <button
+              class="btn btn-dark btn-block rounded-pill"
+              onclick="appendToScreen('3')"
+            >
+              3
+            </button>
+          </div>
+          <div class="col">
+            <button
+              class="btn btn-warning btn-block rounded-pill"
+              onclick="appendToScreen('-')"
+            >
+              -
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button
+              class="btn btn-dark btn-block rounded-pill"
+              onclick="clearScreen()"
+            >
+              C
+            </button>
+          </div>
+          <div class="col">
+            <button
+              class="btn btn-dark btn-block rounded-pill"
+              onclick="appendToScreen('0')"
+            >
+              0
+            </button>
+          </div>
+          <div class="col">
+            <button
+              class="btn btn-dark btn-block rounded-pill"
+              onclick="appendToScreen('.')"
+            >
+              .
+            </button>
+          </div>
+
+          <div class="col">
+            <button
+              class="btn btn-success btn-block rounded-pill"
+              onclick="calculate()"
+            >
+              =
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
